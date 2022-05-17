@@ -12,3 +12,13 @@ body {
 h4 {
     color: #ffff;
 }
+
+.containerCards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+p {
+    color: white;
+}

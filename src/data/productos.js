@@ -35,3 +35,14 @@ export const products = [
         image: "images/SecretlabOMEGA.jpg"
     },
 ]
+
+export const Data = new Promise ((resolve, reject) => {
+    let pedido = true;
+    setTimeout(() => {
+        if (pedido) {
+            resolve(products)
+        }else {
+            reject(`Lo sentimos hubo un error`)
+        }
+    }, 2000)
+});

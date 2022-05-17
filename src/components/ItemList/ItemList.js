@@ -1,13 +1,12 @@
-import { products } from "../../data/productos"
 import Item from "../Item/Item"
 
 
-export default function ItemList() {
+export default function ItemList({productos}) {
 
 
     return (
-        <div>
-            {products.map((product) => (
+        <div className="containerCards">
+            {productos.map((product) => (
                 <Item product={product} key={product.id} />
             )
             )};
