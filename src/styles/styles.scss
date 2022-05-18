@@ -1,5 +1,10 @@
 @import "~bootstrap/scss/bootstrap";
 
+*{
+    color: #ffff;
+}
+
+
 .header {
     text-align: center;
     padding-top: 200px;
@@ -21,4 +26,15 @@ h4 {
 
 p {
     color: white;
+}
+
+img {
+    height: 400px;
+    margin-bottom: 20px;
+}
+
+button {
+    background: rgb(97, 97, 124);
+    height: 50px;
+    width: 100px;
 }
