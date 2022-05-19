@@ -1,23 +1,21 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { Data } from "../../data/productos"
 import ItemDetail from "../ItemDetail/ItemDetail"
 
 
 
-export default function ItemDetailContailer() {
-    const [item, setItem] = React.useState([])
-    const [loading, setLoading] = React.useState(false);
+export default function ItemDetailContailer({id}) {
+    const [item, setItem] = useState([])
+    const [loading, setLoading] = useState(false);
 
-    React.useEffect(() => {
+    useEffect(() => {
         setLoading(true);
-        
         Data
-        .then((result) => setItem(result[0]))
+        .then((result) => setItem(result.find(product => product.id === + id)))
         .catch((error) => console.log(error))
         .finally(() => setLoading(false))
+
     }, [])
-
-
 
     return (
         <div>

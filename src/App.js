@@ -1,12 +1,25 @@
+import {BrowserRouter, Routes, Route} from "react-router-dom"
+
 import NavBar from "./components/Navbar/Navbar"
-import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer"
+import Footer from "./components/Footer/Footer"
+
+import Home from "./views/Home/Home"
+import Category from "./views/Category/Category"
+import Product from "./views/Product/Product"
 
 function App() {
   return (
-    <div className="App">
-      <NavBar category1={"Mouses"} category2={"Teclados"} category3={"Monitores"} category4={"Auriculares"}/>
-      <ItemDetailContainer/>
-    </div>
+    <BrowserRouter>
+      <NavBar />
+      <Routes>
+        <Route exact path="/" element={<Home/>} />
+        <Route exact path="/category" element={<Category/>} />
+        <Route exact path="/category/:categoryId" element={<Category/>} />
+        <Route exact path="/product" element={<Product/>} />
+        <Route exact path="/product/:productId" element={<Product/>} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
   );
 }
 
