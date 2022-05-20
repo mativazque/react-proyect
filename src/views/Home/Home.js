@@ -3,7 +3,9 @@ import ItemListContainer from "../../components/ItemListContainer/ItemListContai
 export default function Home () {
     return(
         <>
-            <h1>Bienvenidos a nuestra pagina</h1>
+            <header>
+                <h1 className="titleHeader p-5 m-0">Bienvenido a Gamer Over</h1>
+            </header>
             <ItemListContainer/>
         </>
     )

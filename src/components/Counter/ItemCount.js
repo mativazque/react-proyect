@@ -20,10 +20,10 @@ export default function ItemCount () {
     }
 
     return (
-        <div>
-            <input type="button" value="+" onClick={handleAdd}/>
-            <h4>{count}</h4>
+        <div className="d-flex justify-content-center">
             <input type="button" value="-" onClick={handleRest}/>
+            <h4 className="text-white ms-4 me-4">{count}</h4>
+            <input  type="button" value="+" onClick={handleAdd}/>
         </div>
     )
 }

@@ -25,8 +25,8 @@ export default function ItemListContainer({categoryId}) {
     }, [categoryId]);
 
     return (
-        <div>
+        <main>
             {loading ? <p>Loading...</p> : <ItemList productos={productos}/>}
-        </div>
+        </main>
     )
 }

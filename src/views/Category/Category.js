@@ -5,7 +5,7 @@ export default function Category () {
     const {categoryId} = useParams();
     return(
         <>
-            <h1>Sección de Category</h1>
+            <h3 className="titleHeader color-white p-5">Nuestros productos</h3>
             <ItemListContainer categoryId={categoryId} />
         </>
     )

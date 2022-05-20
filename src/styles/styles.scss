@@ -1,22 +1,19 @@
 @import "~bootstrap/scss/bootstrap";
 
+@import "./cardsProducts.scss";
+@import "./header.scss";
 
-.header {
-    text-align: center;
-    padding-top: 200px;
-    color: #ffff;
-}
 
 body {
     background-color: black
 }
-h4 {
-    color: #ffff;
+
+a {
+    color: white;
+    text-decoration: none;
 }
 
-.containerCards {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+a:hover {
+    color: white;
 }
 

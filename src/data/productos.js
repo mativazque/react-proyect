@@ -9,10 +9,10 @@ export const products = [
     },
     {
         id: 2,
-        title: "Mouse Logitech G PRO XXXX",
+        title: "Mouse SteelSeries Aerox3",
         stock: 3,
         price: 130,
-        image: "images/Logitech_G_PRO_X.png",
+        image: "images/SteelSeriesAerox3.jpg",
         category_id: 1,
     },
     {
@@ -32,7 +32,7 @@ export const products = [
         category_id: 3,
     },
     {
-        id: 4,
+        id: 5,
         title: "Teclado Razer Huntsman Elite",
         stock: 1,
         price: 120,
@@ -47,6 +47,39 @@ export const products = [
         image: "images/SecretlabOMEGA.jpg",
         category_id: 5,
     },
+    {
+        id: 7,
+        title: "Auricular Razer Nari Ultimate",
+        stock: 1,
+        price: 120,
+        image: "images/RazerNariUltimate.jpg",
+        category_id: 3,
+    },
+    {
+        id: 8,
+        title: "Silla MSI MAG CH120X",
+        stock: 1,
+        price: 220,
+        image: "images/MSI_MAG_CH120X.jpg",
+        category_id: 5,
+    },
+    {
+        id: 9,
+        title: "Camara Web El gato Facecam",
+        stock: 1,
+        price: 120,
+        image: "images/ElgatoFacecam.jpg",
+        category_id: 2,
+    },
+    {
+        id: 9,
+        title: "Teclado Logitech G Pro",
+        stock: 1,
+        price: 100,
+        image: "images/LogitechG_Pro.jpg",
+        category_id: 4,
+    },
+    
 ]
 
 export const Data = new Promise ((resolve, reject) => {
