@@ -72,7 +72,7 @@ export const products = [
         category_id: 2,
     },
     {
-        id: 9,
+        id: 10,
         title: "Teclado Logitech G Pro",
         stock: 1,
         price: 100,
