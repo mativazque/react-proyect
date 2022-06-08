@@ -1,34 +1,32 @@
 import React from "react"
 
 const CartContext = React.createContext();
-const {Provider} = CartContext;
+const { Provider } = CartContext;
 
-const CartProvider = ({children}) => {
+const CartProvider = ({ children }) => {
     const [cart, setCart] = React.useState([]);
 
     const addToCart = (item, count) => {
-        if(isInCart(item.id)) {
+        if (isInCart(item.id)) {
             const newCart = cart.map(cartItem => {
-                if(cartItem.id === item.id) {
-                    cartItem.quantity += count
+                if (cartItem.id === item.id) {
+                    cartItem.quantity += 1
                 }
                 return cartItem
             })
             setCart(newCart)
-        }else {
-            setCart([...cart, {...item, quantity: +count}])
+        } else {
+            setCart([...cart, { ...item, quantity: +count }])
         }
     }
 
     const removeFromCart = (id) => {
-        if(isInCart(id)) {
-            const indexItemDelete = cart.indexOf(itemCart => itemCart.id === id)
-            setCart(cart.splice(indexItemDelete, 1))
-
-        }else{
-            alert("Este producto no se encuentra en su carrito")
-        }
+        const indexItemDelete = cart.findIndex(itemCart => itemCart.id === id)
+        const newCart = cart.splice(indexItemDelete, 1)
+        setCart(newCart);
+        console.log("newCart", newCart);
     }
+
 
     const isInCart = (id) => {
         return cart.find(item => item.id === id)
@@ -38,10 +36,10 @@ const CartProvider = ({children}) => {
         setCart([])
     }
 
-    console.log(cart);
+    console.log("Cart", cart);
 
     return (
-        <Provider value ={{
+        <Provider value={{
             addToCart,
             removeFromCart,
             isInCart,
@@ -51,4 +49,4 @@ const CartProvider = ({children}) => {
     )
 }
 
-export {CartContext, CartProvider}
+export { CartContext, CartProvider }

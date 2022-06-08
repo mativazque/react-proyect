@@ -7,7 +7,7 @@ import Footer from "./components/Footer/Footer"
 import Home from "./views/Home/Home"
 import Category from "./views/Category/Category"
 import Product from "./views/Product/Product"
-import Cart from "./components/Cart/Cart"
+import Cart from "./views/Cart/Cart"
 
 function App() {
   return (

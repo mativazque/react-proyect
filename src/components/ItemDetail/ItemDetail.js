@@ -9,7 +9,7 @@ export default function ItemDetail({ item }) {
 
     const { addToCart, removeFromCart} = React.useContext(CartContext);
     const routeIMG = `../../`;
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(1);
     const [buy, setBuy] = useState(false);
 
     const handleAdd = () => {
