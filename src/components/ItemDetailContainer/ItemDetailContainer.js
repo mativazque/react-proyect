@@ -1,25 +1,28 @@
 import React, { useEffect, useState } from "react"
-import { Data } from "../../data/productos"
 import ItemDetail from "../ItemDetail/ItemDetail"
+import {getFirestore, doc, getDoc} from "firebase/firestore"
 
 
 
-export default function ItemDetailContailer({id}) {
+
+export default function ItemDetailContailer({ id }) {
     const [item, setItem] = useState([])
-    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        setLoading(true);
-        Data
-        .then((result) => setItem(result.find(product => product.id === + id)))
-        .catch((error) => console.log(error))
-        .finally(() => setLoading(false))
 
-    }, [])
+        const db = getFirestore()
+    
+        const productRef = doc(db, "productos", id);
+        getDoc(productRef).then((snapshot) => {
+            setItem({ id: snapshot.id, ...snapshot.data() });
+
+        });
+
+    }, [id])
 
     return (
         <div>
-            {loading ? <p>Loading...</p> : <ItemDetail item={item} />}
+            {<ItemDetail item={item} />}
         </div>
     )
 }

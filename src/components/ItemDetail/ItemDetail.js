@@ -5,6 +5,7 @@ import { CartContext } from "../../context/CartContext"
 
 
 
+
 export default function ItemDetail({ item }) {
 
     const { addToCart, removeFromCart} = React.useContext(CartContext);
