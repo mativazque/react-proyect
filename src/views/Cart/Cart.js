@@ -1,11 +1,11 @@
 import React from 'react'
 import { CartContext } from "../../context/CartContext"
 import CartList from "../../components/CartList/CartList"
-import { Link, NavLink } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 
 export default function Cart() {
-    const { cart } = React.useContext(CartContext);
+    const { cart, totalCart, deleteAll } = React.useContext(CartContext);
 
 
     return (
@@ -15,8 +15,12 @@ export default function Cart() {
                 <div>
                     {cart.map((buy) => (<CartList buy={buy} key={buy.id} />))}
                     <h3>
-                       Precio Total:   USD {cart.reduce((acumulator, buy) => acumulator + buy.price * buy.quantity, 0)}
+                        Precio Total:   USD {totalCart()}
                     </h3>
+                    <button onClick={() => (deleteAll())}>Eliminar todos los items</button>
+                    <Link to="/checkout">
+                        <button>Finalizar compra</button>
+                    </Link>
                 </div>
                 :
                 <div>
@@ -24,6 +28,7 @@ export default function Cart() {
                     <Link to="/">Volver al inicio</Link>
                 </div>
             }
+
         </>
     )
 }

@@ -21,10 +21,7 @@ const CartProvider = ({ children }) => {
     }
 
     const removeFromCart = (id) => {
-        const indexItemDelete = cart.findIndex(itemCart => itemCart.id === id)
-        const newCart = cart.splice(indexItemDelete, 1)
-        setCart(newCart);
-        console.log("newCart", newCart);
+        setCart(cart.filter((item) => item.id !== id))
     }
 
 
@@ -36,7 +33,8 @@ const CartProvider = ({ children }) => {
         setCart([])
     }
 
-    console.log("Cart", cart);
+    const totalCart = () => cart.reduce((acumulator, buy) => acumulator + buy.price * buy.quantity, 0)
+
 
     return (
         <Provider value={{
@@ -44,6 +42,7 @@ const CartProvider = ({ children }) => {
             removeFromCart,
             isInCart,
             deleteAll,
+            totalCart,
             cart,
         }}>{children}</Provider>
     )
