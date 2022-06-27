@@ -34,8 +34,11 @@ export default function ItemListContainer({ categoryId }) {
     }, [categoryId]);
 
     return (
-        <main>
-            {<ItemList productos={productos} />}
+        // <main>
+        //     {<ItemList productos={productos} />}
+        // </main>
+        <main className="pb-5">
+            <ItemList productos={productos} />
         </main>
     )
 }

@@ -1,10 +1,14 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCirclePlus } from "@fortawesome/free-solid-svg-icons"
+import { faCircleMinus } from "@fortawesome/free-solid-svg-icons"
 
-export default function ItemCount({onAdd, onRest, counter}) {
+
+export default function ItemCount({ onAdd, onRest, counter }) {
     return (
         <>
-            <input type="button" value="-" onClick={onRest} />
-            <h4 className="text-white ms-4 me-4">{counter}</h4>
-            <input type="button" value="+" onClick={onAdd} />
+            <FontAwesomeIcon icon={faCircleMinus} size="2x" onClick={onRest} type="button" />
+                <h4 className="ms-4 me-4">{counter}</h4>
+            <FontAwesomeIcon icon={faCirclePlus} size="2x" onClick={onAdd} type="button" />
         </>
     )
 }

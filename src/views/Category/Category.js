@@ -3,9 +3,17 @@ import { useParams } from "react-router-dom";
 
 export default function Category () {
     const {categoryId} = useParams();
+    let titleCategory = `Productos`
+
+    if(categoryId == 1) {titleCategory = `Mouses`} else if 
+    (categoryId == 2) {titleCategory = `Camaras Web`} else if
+    (categoryId == 3) {titleCategory = `Auriculares`} else if
+    (categoryId == 4) {titleCategory = `Teclados`} else if
+    (categoryId == 5) {titleCategory = `Sillas`}
+        
     return(
         <>
-            <h3 className="titleHeader color-white p-5">Nuestros productos</h3>
+            <h3 className="titleHeader color-white p-5">{titleCategory}</h3>
             <ItemListContainer categoryId={categoryId} />
         </>
     )

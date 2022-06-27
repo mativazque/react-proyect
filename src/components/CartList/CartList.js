@@ -1,29 +1,21 @@
 import React from 'react'
 import { CartContext } from "../../context/CartContext"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
+
 
 export default function CartList({ buy }) {
-    const { addToCart, removeFromCart, isInCart, deleteAll} = React.useContext(CartContext);
+    const { removeFromCart } = React.useContext(CartContext);
 
     return (
-        <div>
-            <div className="d-flex justify-content-between align-items-center">
-                <div className="d-flex align-items-center">
-                    <img src={buy.image} alt="img" className="me-3 imgCart"/>
-                        <div className="d-flex flex-column text-white">
-                            <h6>{buy.title}</h6>
-                            <h6 className="fw-bolder">USD {buy.price * buy.quantity}</h6>
-                            <div className="d-flex">
-                                <i className="fa-solid fa-circle-minus fa-lg me-2 text-danger" ></i>
-                                <spam>{buy.quantity}</spam>
-                                <i className="fa-solid fa-circle-plus fa-lg ms-2 text-success"></i>
-                            </div>
-                        </div>
-                </div>
-                <button onClick={() => removeFromCart(buy.id)}>
-                    <i className="fa-solid fa-trash-can fa-lg text-white ms-2" type="button"></i>
-                </button>
+        <div className="d-flex w-100 p-2 mb-4 align-items-center containerItemCart bg-white">
+            <img src={buy.image} alt="img" className="imgCart" />
+            <div className="d-flex justify-content-between align-items-center w-100 flex-wrap flex-direction-row align-content-center">
+                <h5 className="p-2 fw-bolder m-0 rounded-4">{buy.title}</h5>
+                <h5 className="p-2 m-0 text-success fw-bolder">Cantidad: {buy.quantity}</h5>
+                <h5 className="fw-bolder p-2 m-0">USD {buy.price * buy.quantity}</h5>
+                <FontAwesomeIcon icon={faTrashCan} size="lg" onClick={() => removeFromCart(buy.id)} className="p-2"/>
             </div>
-            <hr className="text-white"></hr>
         </div>
     )
 }

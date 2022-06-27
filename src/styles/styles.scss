@@ -1,13 +1,12 @@
 @import "~bootstrap/scss/bootstrap";
-
 @import "./cardsProducts.scss";
 @import "./header.scss";
 @import "./itemDetail.scss";
+@import "checkOut.scss";
 @import "./cart.scss";
 
-
-body {
-    background-color: black
+main{
+    min-height: 85vh;
 }
 
 a {

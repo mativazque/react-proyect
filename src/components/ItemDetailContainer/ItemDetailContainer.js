@@ -21,9 +21,9 @@ export default function ItemDetailContailer({ id }) {
     }, [id])
 
     return (
-        <div>
+        <main>
             {<ItemDetail item={item} />}
-        </div>
+        </main>
     )
 }
 

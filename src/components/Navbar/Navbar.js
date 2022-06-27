@@ -4,46 +4,47 @@ import { Link, NavLink } from "react-router-dom"
 
 export default function NavBar() {
     return (
-        <Navbar bg="dark" variant="dark">
-            <Container>
+        <Navbar bg="dark" expand="lg">
+            <Container className="text-white">
                 <Navbar.Brand>
-                    <Link to="/">Gamer Over</Link>
+                    <Link to="/" >Gamer Over</Link>
                 </Navbar.Brand>
-                <Nav className="me-auto">
-                    <Nav.Link>
-                        <NavLink to="/">
-                            Home
-                        </NavLink>
-                    </Nav.Link>
-                    <Nav.Link>
-                        <NavLink to="/category/1">
-                            Mouse
-                        </NavLink>
-                    </Nav.Link>
-                    <Nav.Link>
-                        <NavLink to="/category/4">
-                            Teclados
-                        </NavLink>
-                    </Nav.Link>
-                    <Nav.Link>
-                        <NavLink to="/category/3">
-                            Auriculares
-                        </NavLink>
-                    </Nav.Link>
-                    <Nav.Link>
-                        <NavLink to="/category/2">
-                            Camaras Web
-                        </NavLink>
-                    </Nav.Link>
-                    <Nav.Link>
-                        <NavLink to="/category/5">
-                            Sillas
-                        </NavLink>
-                    </Nav.Link>
-                    <Nav.Link>
-                        <CartWidget />
-                    </Nav.Link>
-                </Nav>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="me-auto">
+                        <Nav.Link>
+                            <NavLink to="/">
+                                Home
+                            </NavLink>
+                        </Nav.Link>
+                        <Nav.Link>
+                            <NavLink to="/category/1">
+                                Mouses
+                            </NavLink>
+                        </Nav.Link>
+                        <Nav.Link>
+                            <NavLink to="/category/4">
+                                Teclados
+                            </NavLink>
+                        </Nav.Link>
+                        <Nav.Link>
+                            <NavLink to="/category/3">
+                                Auriculares
+                            </NavLink>
+                        </Nav.Link>
+                        <Nav.Link>
+                            <NavLink to="/category/2">
+                                Camaras Web
+                            </NavLink>
+                        </Nav.Link>
+                        <Nav.Link>
+                            <NavLink to="/category/5">
+                                Sillas
+                            </NavLink>
+                        </Nav.Link>
+                    </Nav>
+                </Navbar.Collapse>
+                <CartWidget />
             </Container>
         </Navbar>
     );

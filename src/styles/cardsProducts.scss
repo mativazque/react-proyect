@@ -1,6 +1,13 @@
-.containerCards {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    color: black;
-}
+
+.card {
+    border-color: rgb(39, 39, 35);
+    border-width: 1.5px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 35px  rgb(155, 155, 155);
+
+  }
+  
+  .card:hover {
+    box-shadow: 1px 1px 35px  rgb(20, 20, 20);
+  }
+  
