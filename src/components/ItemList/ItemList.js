@@ -15,5 +15,4 @@ export default function ItemList({ productos }) {
             </Row>
         </Container>
     )
-
 }

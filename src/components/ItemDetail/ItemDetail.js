@@ -83,7 +83,6 @@ export default function ItemDetail({ item }) {
                                     })
                                 }}>Agregar al carrito</Button>
                             }
-
                         </div>
                     </Container>
                 </Col>

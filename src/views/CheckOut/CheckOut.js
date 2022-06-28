@@ -1,6 +1,7 @@
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 import { CartContext } from "../../context/CartContext"
 import React from 'react'
+import Confirmation from "../Confirmation/Confirmation"
 
 export default function CheckOut() {
     const { cart, totalCart, deleteAll } = React.useContext(CartContext);
@@ -29,48 +30,47 @@ export default function CheckOut() {
     }
 
 
+
+
     return (
         <main>
-            {orderId === undefined ? 
-            <>
-                <h1 className="text-center my-5">Check Out</h1>
-                <form onSubmit={handleSubmit} className="d-flex flex-column align-items-center">
-                    <input
-                        type="text"
-                        name="name"
-                        placeholder="Name Apellido"
-                        onChange={handleChange}
-                        className="m-3 inputCheckOut"
-                        required
-                    />
-                    <input
-                        type="email"
-                        name="email"
-                        placeholder="e-mail@xxxx.com"
-                        onChange={handleChange}
-                        className="m-3 inputCheckOut"
-                        required
-                    />
-                    <input
-                        type="phone"
-                        name="phone"
-                        placeholder="9999999999"
-                        onChange={handleChange}
-                        className="m-3 inputCheckOut"
-                        required
-                    />
-                    <input
-                        type="submit"
-                        value="Finalizar compra"
-                        className="m-3 inputCheckOut"
-                    />
-                </form>
-            </>
-            :
-            <div className="w-100 flex-column d-flex justify-content-center align-items-center">
-                <h2 className="my-5 text-success">Gracias por tu compra.</h2>
-                <h5>Su Id es {orderId}</h5>
-            </div>
+            {orderId === undefined ?
+                <>
+                    <h1 className="text-center my-5">Check Out</h1>
+                    <form onSubmit={handleSubmit} className="d-flex flex-column align-items-center">
+                        <input
+                            type="text"
+                            name="name"
+                            placeholder="Name Apellido"
+                            onChange={handleChange}
+                            className="m-3 inputCheckOut"
+                            required
+                        />
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="e-mail@xxxx.com"
+                            onChange={handleChange}
+                            className="m-3 inputCheckOut"
+                            required
+                        />
+                        <input
+                            type="phone"
+                            name="phone"
+                            placeholder="9999999999"
+                            onChange={handleChange}
+                            className="m-3 inputCheckOut"
+                            required
+                        />
+                        <input
+                            type="submit"
+                            value="Finalizar compra"
+                            className="m-3 inputCheckOut"
+                        />
+                    </form>
+                </>
+                :
+                <Confirmation order={orderId} />
             }
         </main>
     )
