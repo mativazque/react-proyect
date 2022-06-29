@@ -1,12 +1,43 @@
-El proyecto fue realizado con React. 
+# Proyecto Final - React - CoderHouse
 
-Tiene instalado firebase, en la base cree la coleccion "Productos", habiendo un array de objetos, cada uno de estos son los productos de la pagina. Éstos los llamo en la app y genero los productos. Adicionalmente, al finalizar cada compra se genera en firebase la orden de compra quedando guardada en la colección "Orders".
+Bienvenidos. Este es el repositorio de mi proyecto final del curso de React de Coder House.
 
-Utilicé Bootstrap para darle la estructura a la pagina, con diseño Responsive.
+## Deploy
 
-Trabajé con SASS para aplicar estilos, principalmente por la comodidad de la sintaxis y el poder trabajar en archivos separados.
+Para ver el deploy ingresar en este [link](https://react-proyect-two.vercel.app/).
 
-Utilicé React-FontaAwesome para aplicar todos los íconos de la pagina.
+## Gif proceso de compra
 
-Para las notificaciones al agregar productos al carrito utilicé React-Toastify.
+![gif](https://github.com/mativazque/react-proyect/blob/main/public/gif/buyProcess.gif)
+
+## Instalación
+
+Para que funcione correctamente deberá utilizar [npm](https://www.npmjs.com/) para la instalación del proyecto. 
+
+
+```bash
+npm install
+```
+
+## Corriendo el proyecto
+
+Una vez instaladas las dependencias antes comentadas, deberá inicializarlo con el siguiente comando:
+
+
+```bash
+npm start
+```
+
+
+
+## Librerias utilizadas
+
+[SCSS](https://sass-lang.com/): pre-procesador css, lo utilicé para modularizar estilos. Se encuentran en src/styles.
+[Boostrap](https://react-bootstrap.github.io/): framework para darle la estructura a la app. Lo utilicé por la sencillez en su uso, logrando además un diseño responsive, adaptándose para diferentes dispositivos.
+[FontAwesome](https://fontawesome.com/): librería de iconos. Los utilicé en el Navbar(cart), Footer(redes sociales) y en el counter del Producto.
+[Toastify](https://www.npmjs.com/package/react-toastify): librería de notificaciones. La utilicé para notificar cuando se agrega un producto al carrito.
+
+
+
+
 
