@@ -1,4 +1,4 @@
-import { addDoc, collection, getFirestore } from "firebase/firestore";
+import { addDoc, collection, getFirestore, Timestamp } from "firebase/firestore";
 import { CartContext } from "../../context/CartContext"
 import React from 'react'
 import Confirmation from "../Confirmation/Confirmation"
@@ -19,6 +19,8 @@ export default function CheckOut() {
             buyer: data,
             items: cart,
             total: totalCart(),
+            status: `Generada`,
+            date: Timestamp.fromDate(new Date),
         };
         console.log(order);
         const db = getFirestore()

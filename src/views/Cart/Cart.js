@@ -1,6 +1,6 @@
 import React from 'react'
 import { CartContext } from "../../context/CartContext"
-import CartList from "../../components/CartList/CartList"
+import CartList from "../../components/CartItem/CartList"
 import { Link } from "react-router-dom"
 import { Container, Button } from "react-bootstrap";
 

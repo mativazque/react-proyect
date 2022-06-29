@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 
 
-export default function CartList({ buy }) {
+export default function CartItem({ buy }) {
     const { removeFromCart } = React.useContext(CartContext);
 
     return (
